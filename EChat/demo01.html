@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello ECharts</title>
+    <!-- import the ECharts file -->
+    <script src="echarts.min.js"></script>
+    <style type="text/css">
+        #main{ width:600px; height: 400px; }
+    </style>
+</head>
+<body>
+<!-- Prepare a Dom with size(width and height) for ECharts -->
+<div id="main"></div>
+<script type="application/javascript">
+    //Based on the prepared Dom, initialization the instance ECharts
+    var myChart = echarts.init(document.getElementById('main'));
+
+    //Set configuration and data for the chart
+    var option = {
+        title:{
+            text:'Hello ECharts'
+        },
+        tooltip:{},
+        legend:{
+            data:['Sales']
+        },
+        xAxis:{
+            data:["Shirts","Cardigans","Caps","Trousers","Shoes","Socks"]
+        },
+        yAxis:{},
+        series:[{
+            name:'Sales',
+            type:'bar',
+            data:[5,20,36,10,10,20]
+        }]
+    };
+    //Show the chart
+    myChart.setOption(option);
+</script>
+</body>
+</html>

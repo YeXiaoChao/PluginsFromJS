@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asynchronous data loading</title>
+    <!-- import the ECharts file -->
+    <script src="echarts.min.js"></script>
+    <style type="text/css">
+        #main{ width:600px; height: 400px; }
+    </style>
+</head>
+<body>
+<!-- Prepare a Dom with size(width and height) for ECharts -->
+<div id="main"></div>
+<script type="application/javascript">
+    //Based on the prepared Dom, initialization the instance ECharts
+    var myChart = echarts.init(document.getElementById('main'));
+
+    function fetchData1(cb) {
+        setTimeout(function () {
+            cb({
+                title:'March',
+                categories:["Shirts","Cardigans","Caps","Trousers","Shoes","Socks"],
+                data:[5,20,36,10,10,20]
+            });
+        },2000);
+    }
+    function fetchData2(cb) {
+        setTimeout(function () {
+            cb({
+                title:'April',
+                categories:["Shirts","Cardigans","Caps","Trousers","Shoes","Socks"],
+                data:[20,40,90,50,50,40]
+            });
+        },4000);
+    }
+
+    //initialization
+    myChart.setOption({
+        title:{
+            text:''
+        },
+        tooltip:{},
+        legend:{
+            data:['Sales']
+        },
+        xAxis:{
+            data:[]
+        },
+        yAxis:{},
+        series:[{
+            name:'Sales',
+            type:'bar',
+            data:[]
+        }]
+    });
+
+    //simple loading animation
+    myChart.showLoading();
+
+    //simulate to load asynchronous data by using setTimeout
+    fetchData1(function (data) {
+        myChart.hideLoading();
+        myChart.setOption({
+            title:{
+                text:data.title
+            },
+            xAxis:{
+                data:data.categories
+            },
+            series:[{
+                name:'Sales',
+                data:data.data
+            }]
+        });
+    })
+    fetchData2(function (data) {
+        myChart.hideLoading();
+        myChart.setOption({
+            title:{
+                text:data.title
+            },
+            xAxis:{
+                data:data.categories
+            },
+            series:[{
+                name:'Sales',
+                data:data.data
+            }]
+        });
+    })
+</script>
+</body>
+</html>

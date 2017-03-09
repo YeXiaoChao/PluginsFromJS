@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Uses this.props.children to access a component's children nodes" />
+    <title>this.props.children</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    var NotesList = React.createClass({
+        render:function () {
+            return (
+                    <ol>
+                        {
+                            React.Children.map(this.props.children,function (child) {
+                                return <li>{child}</li>
+                            })
+                        }
+                    </ol>
+            );
+        }
+    });
+    var root = document.getElementById('root');
+    ReactDOM.render(
+            <NotesList>
+                <h1>Alice</h1>
+                <h2>Kate</h2>
+                <h3>Tom</h3>
+                <h4>Luka</h4>
+            </NotesList>,
+        root
+    );
+</script>
+</body>
+</html>

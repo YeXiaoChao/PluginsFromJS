@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Define a component</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    var arr = [
+        <h1>Hello React!</h1>,
+        <h2>React is awesome!</h2>
+        ];
+    var root = document.getElementById('root');
+    ReactDOM.render(
+        <div>{arr}</div>,
+        root
+    );
+</script>
+</body>
+</html>

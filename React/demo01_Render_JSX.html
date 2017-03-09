@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello React</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <!-- It's a browser version of Babel and could be get inside a babel-core@5 npm release,
+    to actually perform the transformation in the browser. -->
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    ReactDOM.render(
+        <h1>Hello,React!</h1>,
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>

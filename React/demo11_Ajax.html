@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajax</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
+<div id="root"></div>
+<script type="text/babel">
+    var UserGist = React.createClass({
+        getInitialState:function () {
+            return {
+                name:'',
+                website_url:''
 
+            };
+        },
+        componentDidMount:function () {
+            $.get(this.props.source,function (data) {
+                if(this.isMounted()){
+                    this.setState({
+                        name:$(data).find('name').text(),
+                        website_url:$(data).find('website_url').text()
+                    });
+                }
+            }.bind(this));
+        },
+        render:function () {
+            return(
+                    <div>
+                        {this.state.name}'s website url is <a href={this.state.website_url}>here</a>.
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+        <UserGist source="http://www.ycdoit.com/api/Web4Luka.asmx/HelloWorld"/>,
+        document.getElementById('root')
+    );
+</script>
 </body>
 </html>

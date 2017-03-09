@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Form</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
 </head>
 <body>
-
+<div id="root"></div>
+<script type="text/babel">
+    var Input = React.createClass({
+        getInitialState:function () {
+            return {value:'Hello!'}
+        },
+        handleChange:function (event) {
+            this.setState({value:event.target.value});
+        },
+        render:function () {
+            var value = this.state.value;
+            return (
+                    <div>
+                        <input type="text" value={value} onChange={this.handleChange} />
+                        <p>{value}</p>
+                    </div>
+            )
+        }
+    });
+    var root = document.getElementById('root');
+    ReactDOM.render(
+        <Input/>,
+        root
+    );
+</script>
 </body>
 </html>

@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Component Lifecycle</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
 </head>
 <body>
-
+<div id="root"></div>
+<script type="text/babel">
+    /**
+     * 组件生命周期的三种状态
+     * Mounting: 已插入真实DOM
+     * Updating: 正在被重新渲染
+     * Unmounting: 已移出真实 DOM
+     * React 为每个状态都提供了两种处理函数,
+     * will 函数在进入状态前调用,
+     * did 函数在进入状态后调用
+     **/
+    var Hello = React.createClass({
+        getInitialState:function () {
+            return {
+                opacity:1.0,
+                color:'#FF0000'
+            }
+        },
+        //已插入真实DOM后调用
+        //通过 componentDidMount 方法设置一个定时器,每隔100毫秒,就重新设置组件的透明度,从而引发重新渲染。
+        componentDidMount:function () {
+            this.timer = setInterval(function () {
+                var opacity = this.state.opacity;
+                opacity -= 0.05;
+                if(opacity < 0.1){
+                    opacity = 1.0;
+                }
+                this.setState({
+                    opacity:opacity
+                });
+            }.bind(this),100)
+        },
+        render:function () {
+            return (
+                    <div style={{opacity:this.state.opacity,color:this.state.color}}>
+                        <h1>Hello,{this.props.name}!</h1>
+                    </div>
+            );
+        }
+    });
+    var root = document.getElementById('root');
+    ReactDOM.render(
+        <Hello name="Luka"/>,
+        root
+    );
+</script>
 </body>
 </html>

@@ -10,15 +10,6 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-    /**
-     * 组件生命周期的三种状态
-     * Mounting: 已插入真实DOM
-     * Updating: 正在被重新渲染
-     * Unmounting: 已移出真实 DOM
-     * React 为每个状态都提供了两种处理函数,
-     * will 函数在进入状态前调用,
-     * did 函数在进入状态后调用
-     **/
     var Hello = React.createClass({
         getInitialState:function () {
             return {

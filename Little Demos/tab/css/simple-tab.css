@@ -1,0 +1,18 @@
+body, ul, li { margin: 0; padding: 0; }
+body, button, input, select, textarea { font: 12px/1.5 tahoma, arial, \5b8b\4f53; }
+ul, ol { list-style: none; }
+/*------------- Tab title  --------------*/
+.tab { width: 290px; height: 98px; background: #fff; margin: 20px auto;border: 1px solid #ccc; }
+.tab-title { position: relative; height: 24px; margin-bottom: 20px; margin-right: -2px; margin-top: 4px; overflow: hidden; ; padding: 0 8px; }
+.tab-title li { float: left; width: 39px; line-height: 22px; text-align: center; margin: 0 8px; }
+.tab-title li a:link, .tab-title li a:visited { text-decoration: none; color: #3c3c3c; }
+.tab-title li a:hover { color: #f40; font-weight: 700; }
+.tab-title li.selected {border-bottom: 2px solid #f40;font-weight: 700;padding: 0;}
+/*------------- Tab content  --------------*/
+.tab .h { color: #f40 !important;}
+.hidden{ display: none;}
+.tab-content .first li:first-child{width: 260px;}
+.tab-content .mod { height: 50px;margin: -10px 10px 10px;overflow: hidden;}
+.tab-content .mod li{ float: left;height: 25px;line-height: 25px;overflow: hidden;width: 130px;}
+.tab-content .mod a { text-decoration: none; color: #3c3c3c; }
+.tab-content .mod a:hover { color: #f40; }

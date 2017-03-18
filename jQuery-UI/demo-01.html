@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello jQuery UI</title>
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+    <script src="jquery-ui-1.12.1/jquery-1.12.4.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+<div>
+    Before:
+    <input type="button" value="Luka" />
+</div>
+<br />
+<div>
+    After:
+    <a href="#" id="btn">Luka</a>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#btn").button();
+    });
+</script>
+</body>
+</html>

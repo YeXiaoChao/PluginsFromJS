@@ -1,0 +1,18 @@
+body, ul, li { margin: 0; padding: 0; }
+body, button, input, select, textarea { font: 12px/1.5 tahoma, arial, \5b8b\4f53; }
+ul, ol { list-style: none; }
+/*------------- imgTab  --------------*/
+.slide { width: 640px; height: 430px; margin: 20px auto; position: relative; }
+.imgTab { position: absolute; height: 70px; bottom: 0; left: 0; }
+.imgTab ul { width: 660px; overflow: hidden; margin-top: 10px; }
+.imgTab li { width: 120px; height: 60px; margin-right: 10px; float: left; }
+.imgTab img { width: 120px; height: 60px; }
+.imgTab .now-status { position: absolute; width: 130px; height: 20px; background: url(../imgs/slider-ico.png) no-repeat 0 0; z-index: -1; top: 0; left: 0; }
+/*------------- imgContent  --------------*/
+.hidden { display: none; }
+.imgContent img { width: 640px; height: 360px; }
+.imgContent .imgShow { height: 360px; overflow: hidden; }
+.imgContent .imgText { bottom: 70px; width: 100%; position: absolute; }
+.imgContent .imgText .text { z-index: 30; line-height: 20px; margin: 4px 10px 0 10px; position: absolute; }
+.imgContent .imgText .text { font-weight: normal; font-size: 12px; color: #fff; }
+.imgContent .shadow { background-color: #000; opacity: .5; filter: alpha(opacity=50); height: 70px; }

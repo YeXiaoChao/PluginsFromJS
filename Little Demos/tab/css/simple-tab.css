@@ -1,6 +1,6 @@
 body, ul, li { margin: 0; padding: 0; }
 body, button, input, select, textarea { font: 12px/1.5 tahoma, arial, \5b8b\4f53; }
-ul, ol { list-style: none; }
+ul,ol { list-style: none; }
 /*------------- Tab title  --------------*/
 .tab { width: 290px; height: 98px; background: #fff; margin: 20px auto;border: 1px solid #ccc; }
 .tab-title { position: relative; height: 24px; margin-bottom: 20px; margin-right: -2px; margin-top: 4px; overflow: hidden; ; padding: 0 8px; }

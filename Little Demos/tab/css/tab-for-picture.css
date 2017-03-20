@@ -7,7 +7,7 @@ ul, ol { list-style: none; }
 .imgTab ul { width: 660px; overflow: hidden; margin-top: 10px; }
 .imgTab li { width: 120px; height: 60px; margin-right: 10px; float: left; }
 .imgTab img { width: 120px; height: 60px; }
-.imgTab .now-status { position: absolute; width: 130px; height: 20px; background: url(../imgs/slider-ico.png) no-repeat 0 0; z-index: -1; top: 0; left: 0; }
+.imgTab .now-status { position: absolute; width: 130px; height: 20px; background: url(../imgs/tab-for-picture/slider-ico.png) no-repeat 0 0; z-index: -1; top: 0; left: 0; }
 /*------------- imgContent  --------------*/
 .hidden { display: none; }
 .imgContent img { width: 640px; height: 360px; }

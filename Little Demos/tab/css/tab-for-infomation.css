@@ -1,0 +1,31 @@
+body, ul, li { margin: 0; padding: 0; }
+body, button, input, select, textarea { font: 12px/1.5 tahoma, arial, \5b8b\4f53; }
+ul, ol,li { list-style: none; }
+a { text-decoration: none;}
+.hidden {display: none;}
+/*----------   tab ------------*/
+.tab-Infomations {position: relative;width: 959px;margin: 10px auto;}
+.tab-content  {width:912px;height:324px;background: url("../imgs/tab-for-infomation/slidebg.jpg")  no-repeat;
+   overflow: hidden;margin: 0 auto;}
+/*----------   tab-thumbs ------------*/
+.tab-thumbs{ position: absolute;bottom: 0;}
+.tab-thumbs li { float: left;width: 228px;height: 50px;}
+.tab-thumbs li a { width: 228px;height: 50px;display: block;color: #ffffff;font-size: 18px;font-family: Arial,sans-serif;line-height: 50px;text-align: center; }
+.tab-thumbs li.selected a{ cursor: default;text-shadow: 1px 1px 1px #374f10;}
+/*----------   tab-info ------------*/
+.tab-info { width:912px;height:324px;}
+.info {width: 912px;height: 324px;position: absolute;}
+.info p{ color:#1d1d1d;font-size: 12px;line-height: 20px;margin-left: 326px;margin-top: 142px;width: 542px; }
+.info1 { background: url("../imgs/tab-for-infomation/billboard1.png") no-repeat; }
+.info2 { background: url("../imgs/tab-for-infomation/billboard2.png") no-repeat; }
+.info3 { background: url("../imgs/tab-for-infomation/billboard3.png") no-repeat; }
+.info4 { background: url("../imgs/tab-for-infomation/billboard4.png") no-repeat; }
+.GlobalButton {background: url("../imgs/tab-for-infomation/btn_right.png") no-repeat  top right;display: block;float: left;font-weight: bold;height: 31px;margin-top: 20px;padding-right: 20px;}
+.GlobalButton span { background: transparent url("../imgs/tab-for-infomation/btn_left.png") no-repeat 0 0;line-height: 18px;line-height: 18px;padding: 7px 0 6px 20px;color: #252525;display: block;}
+.tab-border { border: 1px solid #cccccc;margin: 0 auto;padding:3px;width: 912px;}
+/*----------   tab-arrows ------------*/
+.arrows a { display: block;height: 41px;width:41px;top: 143px;z-index: 10;position: absolute;cursor: pointer;}
+.arrows-left {background: url("../imgs/tab-for-infomation/arrows.png") no-repeat  0 0;left: 0;}
+.arrows-right {background: url("../imgs/tab-for-infomation/arrows.png") no-repeat  -41px 0px;right: 0;}
+.arrows-left:hover,.arrows-right:hover {background-position-y: -41px;}
+

@@ -7,7 +7,7 @@ $(document).ready(function () {
         changeTab($(this).index());
     });
     $(".imgTab li").mouseout(function () {
-        loopImgs = setInterval("changeTabByTimer()",2000); // 启用循环事件，间隔为1秒;实际情况下我们应该加长间隔时间
+        loopImgs = setInterval("changeTabByTimer()",2000); // 启用循环事件，间隔为2 秒;
     });
 });
 
@@ -15,6 +15,7 @@ function changeTab(imgIndex) {
     var leftNum = ($(".imgTab li").width()+10)*imgIndex+"px";
     var imgText = $(".imgShow li a").eq(imgIndex)[0].children[0].alt;
     //淡入淡出
+    $(".imgShow li").stop()
     $(".imgShow li").fadeOut();
     $(".imgShow li").eq(imgIndex).fadeIn();
     // 动画效果

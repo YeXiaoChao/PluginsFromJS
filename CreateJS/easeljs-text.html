@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EaselJS生成文字</title>
+    <script src="js/easeljs-0.8.2.min.js"></script>
+    <style>
+        #View { background-color: #fddfdf;}
+    </style>
+</head>
+<body>
+<canvas id="View" width="320" height="200"></canvas>
+<script>
+    var stage = new createjs.Stage("View");
+    var theText = new createjs.Text("Hello,EaselJS!","normal 32px microsoft yahei","#222222");
+    stage.addChild(theText);
+    stage.update();
+</script>
+</body>
+</html>

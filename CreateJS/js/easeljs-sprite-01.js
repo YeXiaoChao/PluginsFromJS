@@ -21,6 +21,6 @@ var instance = new createjs.Sprite(spriteSheet,"run")
 
 container.addChild(instance);
 stage.addChild(container);
-createjs.Ticker.setFPS(5);
+createjs.Ticker.setFPS(5); //设置帧
 createjs.Ticker.addEventListener("tick",stage);
 stage.update();

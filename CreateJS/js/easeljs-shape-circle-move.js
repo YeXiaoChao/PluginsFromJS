@@ -10,30 +10,22 @@ stage.addChild(circle);
 //Update stage will render next frame
 //stage.update();
 
-/* Simple Interaction Example */
-stage.addEventListener("click",handleClick);
-function handleClick(event) {
-    // Click happened;
-}
-stage.addEventListener("mousedown",handlePress);
-function handlePress(event) {
-    // A mouse press happened.
-    // Listen for mouse move while the mouse is down:
-    event.addEventListener("mousemove",handleMove);
-}
-function handleMove(event) {
-    // Check out the DragAndDrop example in GitHub for more
-}
-
-/* Simple Animation
- * This example moves the shape created in the previous demo across the screen.*/
 // Update stage will render next frame
 createjs.Ticker.addEventListener("tick",handleTick);
 //添加一个Ticker类帮助避免多次调用update方法
 function handleTick() {
-    // Circle will move 10 units to the right.
-    circle.x +=10;
-    //W ill cause the circle to wrap back
-    if(circle.x > stage.canvas.width){ circle.x = 0;}
+    var maxX =  stage.canvas.width - 50;
+    var maxY =  stage.canvas.height - 50;
+    //Will cause the circle to wrap back
+    if(circle.x < maxX && circle.y == 50){
+        // Circle will move 10 units to the right.
+        circle.x +=10;
+    }else if(circle.x == maxX && circle.y <maxY){
+        circle.y +=10;
+    }else if(circle.x > 50 && circle.y == maxY){
+        circle.x -=10;
+    }else if(circle.x<= 50){
+        circle.y -=10;
+    }
     stage.update();
 }

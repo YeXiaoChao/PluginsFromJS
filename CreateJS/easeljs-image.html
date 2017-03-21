@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <title>EaselJS处理图片</title>
     <script src="js/easeljs-0.8.2.min.js"></script>
+    <style>
+
+    </style>
 </head>
 <body>
-<canvas id="myCanvas" width="560" height="410"></canvas>
+<canvas id="imageView" width="560" height="410">您的浏览器版本过低，请更换更高版本的浏览器</canvas>
 <script>
-    var stage = new createjs.Stage("myCanvas");
-    var tempBitmap = new createjs.Bitmap("imgs/testImg.jpg");
-    stage.addChild(tempBitmap);
+    // 通过画布ID 创建一个 Stage 实例
+    var stage = new createjs.Stage("imageView");
+    // 创建一个 Bitmap 实例
+    var theBitmap = new createjs.Bitmap("imgs/testImg.jpg");
+    // 设置画布大小等于图片实际大小
+    stage.canvas.width = theBitmap.image.naturalWidth;
+    stage.canvas.height = theBitmap.image.naturalHeight;
+    // 把Bitmap 实例添加到 stage 的显示列表中
+    stage.addChild(theBitmap);
+    // 更新 stage 渲染画面
     stage.update();
 </script>
 </body>

@@ -285,4 +285,3 @@ index_by_jQuery_Ajax.js
 waterfall.css
 jquery</span>-3.1.1.min.js</pre>
 </div>
-<p><strong>具体可查看<a href="https://github.com/YeXiaoChao/PluginsFromJS/tree/master/Little%20Demos/waterfall" target="_blank">源码</a></strong></p>

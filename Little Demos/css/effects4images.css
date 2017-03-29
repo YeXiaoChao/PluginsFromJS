@@ -1,0 +1,23 @@
+/**   CSS Reset  **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0; }
+body, button, input, select, textarea { font: 12px/1.5 tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; }
+code, kbd, pre, samp { font-family: couriernew, courier, monospace; }
+small { font-size: 12px; }
+ul, ol { list-style: none; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+legend { color: #000; }
+fieldset, img { border: 0; }
+button, input, select, textarea { font-size: 100%; }
+table { border-collapse: collapse; border-spacing: 0; }
+/*   container  */
+#container { width: 320px; height: 456px; overflow: hidden; position: relative; margin: 20px auto; }
+.slider { position: absolute; }
+.slider img { width: 320px; display: block; }
+.thumb { position: absolute; bottom: 5px; right: 5px; }
+.thumb li { float: left; color: #FF7300; text-align: center; line-height: 16px; width: 16px; height: 16px; font-size: 12px; font-family: Arial; margin: 3px 1px; border: 1px solid #FF7300; background: #fff; cursor: pointer; }
+.thumb li:hover,.thumb li.selected { color: #fff; line-height: 16px; width: 16px; height: 16px; font-size: 16px; background: #EF7300; font-weight: bold; }

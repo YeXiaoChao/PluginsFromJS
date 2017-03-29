@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <link rel="stylesheet" href="../css/effects4images.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="effects4images.js"></script>
+</head>
+<body>
+<div id="container">
+    <ul class="slider">
+        <li><img src="../imgs/Girls/04.png"/></li>
+        <li><img src="../imgs/Girls/05.jpg"/></li>
+        <li><img src="../imgs/Girls/14.jpg"/></li>
+        <li><img src="../imgs/Girls/17.jpg"/></li>
+        <li><img src="../imgs/Girls/20.jpg"/></li>
+    </ul>
+    <ul class="thumb">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#container").fadeInOut();
+    })
+</script>
+</body>
+</html>

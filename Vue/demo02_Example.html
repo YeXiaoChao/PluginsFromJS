@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js 实例</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<!--  模板 -->
+<div id="app">
+    <p>123</p>
+</div>
+<script id="tpl" type="x-template">
+    <div class="wrapper">
+        <div class="tpl">
+            <p>This is a tpl from script tag</p>
+        </div>
+        <div class="tpl">
+            <p>This is a tpl from script tag</p>
+        </div>
+    </div>
+</script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        template: '#tpl'
+    })
+</script>
+
+<!--  数据 -->
+<div id="app-2">
+    <p>{{a}}</p>
+</div>
+<script>
+    var data = {a: 1};
+    var vm2 = new Vue({
+        el: '#app-2',
+        data: data
+    });
+    vm2.$data === data; // true
+    vm2.$el === document.getElementById('app-2'); // true
+    vm2.$watch('a', function (newVal, oldVal) {
+        // 这个回调将在 `vm.a`  改变后调用
+        console.log('This a is changed.')
+    })
+    vm2.$data.a = 2;
+</script>
+<div id="app-3">
+    <my-component title="myTitle" content="myContent"></my-component>
+</div>
+<script>
+    var myComponent = Vue.component('my-component', {
+        props: ['title', 'content'],
+        data: function () {
+            return {
+                desc: '123'
+            }
+        },
+        template: '<div><h1>{{title}}</h1><p>{{content}}</p><p>{{desc}}</p></div>'
+    })
+    var vm3 = new Vue({
+        el: '#app-3'
+    })
+</script>
+
+<!--  方法 -->
+<div id="app-4">
+    <button v-on:click="alert">alert</button>
+</div>
+<script>
+    var vm4 = new Vue({
+        el: '#app-4',
+        data: {a: 1},
+        methods: {
+            alert: function () {
+                alert(this.a);
+            }
+        }
+    })
+</script>
+
+<!--  生命周期 -->
+<div id="app-5">
+   <p>{{a}}</p>
+</div>
+<script>
+    var vm5 = new Vue({
+        el: '#app-5',
+        data: {
+           a:1
+        },
+        created: function () {
+            // `this` 指向 vm 实例
+            console.log('a is: '+ this.a);
+        },
+    })
+</script>
+</body>
+</html>

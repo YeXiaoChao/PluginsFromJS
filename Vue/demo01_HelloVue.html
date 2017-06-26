@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Vue.js（读音 /vjuː/，类似于 view） 是一套构建用户界面的渐进式框架" >
+    <title>Hello, Vue.js</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<!--  声明式渲染 -->
+<div id="app">{{message}}</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello Vue!'
+        }
+    });
+</script>
+<!--  v-bind 属性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊属性 -->
+<!--  它们会在渲染的 DOM 上应用特殊的响应式行为。简言之，这里该指令的作用是：“将这个元素节点的 title 属性和 Vue 实例的 message 属性保持一致” -->
+<div id="app-2">
+    <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </span>
+</div>
+<script>
+    var app2 = new Vue({
+        el:'#app-2',
+        data:{
+            message:'页面加载于'+ new Date()
+        }
+    });
+</script>
+<!--  条件与循环 -->
+<!--  我们不仅可以绑定 DOM 文本到数据，也可以绑定 DOM 结构到数据。而且，Vue 也提供一个强大的过渡效果系统，可以在 Vue 插入/更新/删除元素时自动应用过渡效果。 -->
+<!-- 继续在控制台设置 app3.seen = false，你会发现 “现在你看到我了” 消失了 -->
+<div id="app-3">
+    <p v-if="seen">现在你看到我了</p>
+</div>
+<script>
+    var app3 = new Vue({
+        el:'#app-3',
+        data:{
+            seen:true
+        }
+    });
+</script>
+<!--  还有其它很多指令，每个都有特殊的功能。例如，v-for 指令可以绑定数组的数据来渲染一个项目列表 -->
+<!--  在控制台里，输入 app4.todos.push({ text: '新项目' })，你会发现列表中添加了一个新项 -->
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+    </ol>
+</div>
+<script>
+    var app4 = new Vue({
+        el:'#app-4',
+        data:{
+            todos:[
+                {text:'学习 Javascript'},
+                {text:'学习 Vue'},
+                {text:'整个牛项目'}
+            ]
+        }
+    });
+</script>
+<!--  处理用户输入 -->
+<!--  为了让用户和你的应用进行互动，我们可以用 v-on 指令绑定一个事件监听器，通过它调用我们 Vue 实例中定义的方法 -->
+<div id="app-5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+<script>
+    // 注意在 reverseMessage 方法中，我们更新了应用的状态，但没有触碰 DOM——所有的 DOM 操作都由 Vue 来处理，你编写的代码只需要关注底层逻辑。
+    var app5 = new Vue({
+        el:'#app-5',
+        data:{
+            message:'Hello Vue.js!'
+        },
+        methods:{
+            reverseMessage:function () {
+                this.message = this.message.split(' ').reverse().join(' ');
+            }
+        }
+    });
+</script>
+<!--  Vue 还提供了 v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定 -->
+<div id="app-6">
+    <p>{{message}}</p>
+    <input v-model="message"/>
+</div>
+<script>
+    var app6 = new Vue({
+        el:'#app-6',
+        data:{
+            message:'Hello Vue!'
+        }
+    });
+</script>
+<!--  组件化应用构建 -->
+<!--  组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、自包含和通常可复用的组件构建大型应用 -->
+<div id="app-7">
+    <ol>
+        <!-- 现在我们为每个todo-item提供待办项对象    -->
+        <!-- 待办项对象是变量，即其内容可以是动态的 -->
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+    </ol>
+</div>
+<script>
+    Vue.component('todo-item',{
+        props:['todo'],
+        template:'<li>{{todo.text}}</li>'
+    })
+    var app7 = new Vue({
+        el:'#app-7',
+        data:{
+            groceryList:[
+                { text: '蔬菜' },
+                { text: '奶酪' },
+                { text: '随便其他什么人吃的东西' }
+            ]
+        }
+    })
+</script>
+<div id="app-8">
+    <message content="Hello Vue.js"></message>
+</div>
+<script>
+    var Message = Vue.extend({
+        props:['content'],
+        template:'<h1>{{content}}</h1>'
+    })
+    Vue.component('message',Message);
+    var app8 = new Vue({
+        el:'#app-8'
+    })
+</script>
+</body>
+</html>
